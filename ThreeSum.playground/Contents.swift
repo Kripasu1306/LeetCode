@@ -8,8 +8,6 @@ import UIKit
 
  You may assume that each input would have exactly one solution.
 
-  
-
  Example 1:
 
  Input: nums = [-1,2,1,-4], target = 1
@@ -29,6 +27,15 @@ import UIKit
  -104 <= target <= 104
  */
 
+/*
+ 1. First sort the array. So that we dont get duplicate combination.
+ 2. start from de first element. then for the rest of the array have a left and right pointer. (start+left+right = result)
+ 3. If the value is greater than the result, then we decrement the right pointer.
+ 4. if the value is less than the result, then we increment the left pointer.
+ 
+ Time complexity O(n2)
+ 
+ */
 func threeSum(_ nums: [Int]) -> [[Int]] {
     var sortedNums = nums.sorted()
     var solutionSet = [[Int]]()
